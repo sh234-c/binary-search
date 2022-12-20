@@ -1,0 +1,28 @@
+class Solution {
+    public int arrangeCoins(int n) {
+        int level = 0, coin = 1;
+        while (n >= coin) {
+            n -= coin;
+            coin++;
+            level++;
+        }
+        return level;
+    }
+}
+class Solution {
+    public int arrangeCoins(int n) {
+        int lo = 1, hi = n, mid;
+        while (lo <= hi) {
+            mid = lo + (hi - lo) / 2;
+            if (mid * (mid + 1L) <= n * 2L) lo = mid + 1;
+            else hi = mid - 1;
+        }
+        return hi;
+    }
+}
+class Solution {
+    public int arrangeCoins(int n) {
+        return (int) (Math.sqrt(n * 8L + 1) - 1 ) / 2;
+    }
+}
+Additional
