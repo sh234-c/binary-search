@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+private:
+   int number;
+   int guess(int num){
+      if(number > num)
+         return 1;
+      if(number < num)
+         return -1;
+      return 0;
+   }
